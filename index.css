@@ -35,7 +35,7 @@ html, body {
     background-color: rgb(165, 182, 240);
 }
 
-#v-inboxMessage-tab {
+.messageColumn {
     background-color: rgb(255, 254, 238);
 }
 
