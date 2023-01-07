@@ -1,0 +1,71 @@
+html, body {
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@media (min-width: 0px) and (max-width: 576px){
+    #v-allbox-tab{
+
+    }
+}
+
+@media (min-width: 577px) and (max-width: 922px){
+    #v-allbox-tab{
+
+    }
+}
+
+@media (min-width: 923px) and (max-width: 1500px){
+    #v-allbox-tab{
+
+    }
+}
+
+@media (min-width: 577px) and (max-width: 922px){
+    .messages{
+
+    }
+}
+
+
+.navbar {
+    background-color: rgb(165, 182, 240);
+}
+
+#v-inboxMessage-tab {
+    background-color: rgb(255, 254, 238);
+}
+
+.messageButton {
+    width: 100%;
+}
+
+table.table-borderless {
+    table-layout: fixed;
+    width: 100%
+}
+
+td {
+    width: 25%;
+}
+
+.message-send-date{
+
+}
+
+
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.aqua {
+    background-color: aqua;
+}

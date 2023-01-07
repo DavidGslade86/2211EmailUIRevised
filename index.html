@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>BootStrap Grid</title>
+<!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- TOP NAVBAR ALWAYS VISIBLE -->
+            <a class="navbar-brand ps-2" href="index.html">DG-Mail</a>
+            <button class="navbar-toggler dropdown-menu-end" style="margin-right:5px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex">
+                    <input class="form-control me-1" type="search" placeholder="Search Mail" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <button class="btn">Settings</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn top_login">Switch Accounts</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn sign_btn">SignUp</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- FlEXIBLE MAILBOX OFF-CANVAS / INBOXES VISIBLE BELOW LG -->
+            <div class="container-fluid d-flex d-lg-none">
+                <button class="navbar-toggler nav-tabs" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MAIL OPTIONS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li class="nav-item dropdown nav">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Inboxes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <button class="nav-link dropdown-item" id="v-pills-inbox-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item" id="v-pills-sent-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item" id="v-pills-drafts-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item" id="v-pills-spam-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item" id="v-pills-trash-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <!-- ADDITIONAL MESSAGES DROPDOWN CONTENT VISIBLE MD AND BELOW-->
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="inboxMsgsTop">
+                        <li class="nav-item dropdown nav">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Messages
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <button class="nav-link dropdown-item messageButton" id="v-pills-message1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Alice</td>
+                                                    <td class="message-send-date border-end px-2">Hello... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 1 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item messageButton" id="v-pills-message2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Ben</td>
+                                                    <td class="message-send-date border-end px-2">Hello there... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item messageButton" id="v-pills-message3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="message-send-date border-end px-2">Dave</td>
+                                                <td class="message-send-date border-end px-2">Hi there... </td>
+                                                <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                <td class="message-send-date px-2"><input type="checkbox"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table></button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item messageButton" id="v-pills-message4-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">                                            <table class="table-borderless">
+                                        <thead>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="message-send-date border-end px-2">Januce</td>
+                                                <td class="message-send-date border-end px-2">Sup... </td>
+                                                <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                <td class="message-send-date px-2"><input type="checkbox"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table></button>
+                                </li>
+                                <li>
+                                    <button class="nav-link dropdown-item messageButton" id="v-pills-message5-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Alice</td>
+                                                    <td class="message-send-date border-end px-2">Hey again... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-0 me-auto mw-100 h-100">
+            <div class="row h-100">
+                <div class="h-100 m-0 p-0 bg-light">
+                    <!--ALL TABS AND CONTENT-->
+                    <div class="d-flex align-items-start h-100 leftcol">
+                        <div class="nav flex-column nav-tabs h-100 d-none d-lg-flex col-2" id="v-allbox-tab" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link active" id="v-pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
+                            <button class="nav-link" id="v-pills-sent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
+                            <button class="nav-link" id="v-pills-drafts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
+                            <button class="nav-link" id="v-pills-spam-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
+                            <button class="nav-link" id="v-pills-trash-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
+                        </div>
+                        <!-- Below DIV Changes Message and Mail Columns-->
+                        <div class="tab-content h-100 " id="v-pills-inboxMessages">
+                            <div class="tab-pane fade show active h-100" id="v-pills-inbox" role="tabpanel" aria-labelledby="v-pills-inbox-tab" tabindex="0">
+                                <div class="d-flex align-items-start h-100" id="inbox-contents">
+                                    <!-- Below DIV changes Messages column-->
+                                    <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end" id="v-inboxMessage-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="nav-link active messageButton" id="v-pills-message1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Alice</td>
+                                                        <td class="message-send-date border-end px-2">Hello... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 1 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link messageButton" id="v-pills-message2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Ben</td>
+                                                        <td class="message-send-date border-end px-2">Hello there... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link messageButton" id="v-pills-message3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Dave</td>
+                                                        <td class="message-send-date border-end px-2">Hi there... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link messageButton" id="v-pills-message4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Januce</td>
+                                                        <td class="message-send-date border-end px-2">Sup... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link messageButton" id="v-pills-message5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Alice</td>
+                                                        <td class="message-send-date border-end px-2">Hey again... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                    </div>
+                                    <div class="tab-content h-100 " id="v-pills-tabContent">
+                                        <!-- Mail UI content goes here -->
+                                        <div class="tab-pane fade show active h-100" id="v-pills-message1" role="tabpanel" aria-labelledby="v-pills-message1-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hello...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Alice | Jan 1</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+
+                                            </div>
+                                            <!-- Bootstrap 5 starter form -->
+                                            <form class="m-3 text-center" id="replyEmail1" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-message2" role="tabpanel" aria-labelledby="v-pills-message2-tab" tabindex="0">
+                                        <!-- Message UI content goes here -->
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Hello there...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Ben | Jan 2</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Bootstrap 5 starter form -->
+                                        <form class="m-3 text-center" id="replyEmail2" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-message3" role="tabpanel" aria-labelledby="v-pills-message3-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hi there...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Dave | Jan 3</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Bootstrap 5 starter form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-message4" role="tabpanel" aria-labelledby="v-pills-message4-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Sup</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Januce | Jan 3</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-message5" role="tabpanel" aria-labelledby="v-pills-message5-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hey again...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Alice | Jan 4</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-sent" role="tabpanel" aria-labelledby="v-pills-sent-tab" tabindex="0">
+                                <div class="d-flex align-items-start h-100" id="sent-contents">
+                                    <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="nav-link active" id="v-pills-sentmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage1" type="button" role="tab" aria-controls="v-pills-sentmessage1" aria-selected="true">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Dan</td>
+                                                        <td class="message-send-date border-end px-2">Hi... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-sentmessage2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage2" type="button" role="tab" aria-controls="v-pills-sentmessage2" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Ken</td>
+                                                        <td class="message-send-date border-end px-2">Ahoy... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-sentmessage3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage3" type="button" role="tab" aria-controls="v-pills-sentmessage3" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Vince</td>
+                                                        <td class="message-send-date border-end px-2">Hola... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                    </div>
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-sentmessage1" role="tabpanel" aria-labelledby="v-pills-sentmessage1-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hi...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Dan | Jan 2</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-sentmessage2" role="tabpanel" aria-labelledby="v-pills-sentmessage2-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Ahoy...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Ken | Jan 3</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-sentmessage3" role="tabpanel" aria-labelledby="v-pills-sentmessage3-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hola...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vince | Jan 4</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-drafts" role="tabpanel" aria-labelledby="v-pills-drafts-tab" tabindex="0">
+                                <div class="d-flex align-items-start h-100" id="drafts-contents">
+                                    <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="nav-link active" id="v-pills-draftmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage1" type="button" role="tab" aria-controls="v-pills-draftmessage1" aria-selected="true">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Dan</td>
+                                                        <td class="message-send-date border-end px-2">Hi... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-draftmessage2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage2" type="button" role="tab" aria-controls="v-pills-draftmessage2" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Ken</td>
+                                                        <td class="message-send-date border-end px-2">Ahoy... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-draftmessage3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage3" type="button" role="tab" aria-controls="v-pills-draftmessage3" aria-selected="false">
+                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Vince</td>
+                                                        <td class="message-send-date border-end px-2">Hola... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </button>
+                                    </div>
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-draftmessage1" role="tabpanel" aria-labelledby="v-pills-draftmessage1-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hi...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Dan | Jan 2</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-draftmessage2" role="tabpanel" aria-labelledby="v-pills-draftmessage2-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Ahoy...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Ken | Jan 3</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-draftmessage3" role="tabpanel" aria-labelledby="v-pills-draftmessage3-tab" tabindex="0">
+                                            <div class="card p-2 m-3 ">
+                                                <h5 class="card-title">Hola...</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">Vince | Jan 4</h6>
+                                                <div class="card-body">
+                                                <!-- Message body goes here -->
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                                </div>
+                                            </div>
+                                            <!-- Email Reply form -->
+                                            <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                                <div class="mb-3">
+                                                    <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                    <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                    <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                    <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-spam" role="tabpanel" aria-labelledby="v-pills-spam-tab" tabindex="0">
+                                <div class="d-flex align-items-start h-100" id="drafts-contents">
+                                <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="nav-link active" id="v-pills-spammessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage1" type="button" role="tab" aria-controls="v-pills-spammessage1" aria-selected="true">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Dan</td>
+                                                    <td class="message-send-date border-end px-2">Hi... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                    <button class="nav-link" id="v-pills-spammessage2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage2" type="button" role="tab" aria-controls="v-pills-spammessage2" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Ken</td>
+                                                    <td class="message-send-date border-end px-2">Ahoy... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                    <button class="nav-link" id="v-pills-spammessage3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage3" type="button" role="tab" aria-controls="v-pills-spammessage3" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Vince</td>
+                                                    <td class="message-send-date border-end px-2">Hola... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                </div>
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-spammessage1" role="tabpanel" aria-labelledby="v-pills-spammessage1-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Hi...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Dan | Jan 2</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-spammessage2" role="tabpanel" aria-labelledby="v-pills-spammessage2-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Ahoy...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Ken | Jan 3</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-spammessage3" role="tabpanel" aria-labelledby="v-pills-spammessage3-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Hola...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vince | Jan 4</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div></div>
+                            <div class="tab-pane fade" id="v-pills-trash" role="tabpanel" aria-labelledby="v-pills-trash-tab" tabindex="0">
+                                <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="nav-link active" id="v-pills-trashmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage1" type="button" role="tab" aria-controls="v-pills-trashmessage1" aria-selected="true">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Dan</td>
+                                                    <td class="message-send-date border-end px-2">Hi... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                    <button class="nav-link" id="v-pills-trashmessage2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage2" type="button" role="tab" aria-controls="v-pills-trashmessage2" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Ken</td>
+                                                    <td class="message-send-date border-end px-2">Ahoy... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                    <button class="nav-link" id="v-pills-trashmessage3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage3" type="button" role="tab" aria-controls="v-pills-trashmessage3" aria-selected="false">
+                                        <table class="table-borderless">
+                                            <thead>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="message-send-date border-end px-2">Vince</td>
+                                                    <td class="message-send-date border-end px-2">Hola... </td>
+                                                    <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </button>
+                                </div>
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-trashmessage1" role="tabpanel" aria-labelledby="v-pills-trashmessage1-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Hi...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Dan | Jan 2</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-trashmessage2" role="tabpanel" aria-labelledby="v-pills-trashmessage2-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Ahoy...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Ken | Jan 3</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-trashmessage3" role="tabpanel" aria-labelledby="v-pills-trashmessage3-tab" tabindex="0">
+                                        <div class="card p-2 m-3 ">
+                                            <h5 class="card-title">Hola...</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Vince | Jan 4</h6>
+                                            <div class="card-body">
+                                            <!-- Message body goes here -->
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam provident iure voluptates, dolor quo id quaerat fugiat voluptatum amet numquam cumque iusto quibusdam beatae aut, sit deleniti ex accusamus? Consequuntur cum, iste laudantium inventore architecto facilis. Cumque delectus laborum odio?</p>
+                                            </div>
+                                        </div>
+                                        <!-- Email Reply form -->
+                                        <form class="m-3 text-center" id="replyEmail" data-sb-form-api-token="API_TOKEN">
+                                            <div class="mb-3">
+                                                <label class="form-label px-5 pt-1 bg-secondary rounded-1 text-white" for="message"><h6>Respond Below</h6></label>
+                                                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height:10vh;" data-sb-validations="required"></textarea>
+                                                <div class="invalid-feedback" data-sb-feedback="message:required">Are you sure? Your message is empty.</div>
+                                                <button type="submit" class="btn btn-dark mt-3">Reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+    </body>
+</html>
