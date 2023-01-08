@@ -2,45 +2,70 @@ html, body {
     height: 100%;
 }
 
-*{
-    box-sizing: border-box;
+body {
+    background-image: url(https://i0.wp.com/djgwebdevelopment.files.wordpress.com/2023/01/pexels-pretty-sky-background.jpg?ssl=1);
+    overflow-y: hidden;
 }
 
-@media (min-width: 0px) and (max-width: 576px){
-    #v-allbox-tab{
-
-    }
-}
-
-@media (min-width: 577px) and (max-width: 922px){
-    #v-allbox-tab{
-
-    }
-}
-
-@media (min-width: 923px) and (max-width: 1500px){
-    #v-allbox-tab{
-
-    }
-}
-
-@media (min-width: 577px) and (max-width: 922px){
-    .messages{
-
-    }
-}
-
-
-.navbar {
-    background-color: rgb(165, 182, 240);
+#navbarContainer {
+    background-color: rgba(165, 183, 240, 0.391);
 }
 
 .messageColumn {
-    background-color: rgb(255, 254, 238);
+    background-color: rgba(255, 254, 238, 0.244);
 }
 
 .messageButton {
     width: 100%;
+}
+
+#v-pills-inboxMesContent{
+    background-color: rgba(0, 0, 0, 0.287);
+}
+
+#v-allbox-tab {
+    background-color: rgba(255, 255, 255, 0.529);
+}
+
+#siteTitle {
+    color: white;
+    font-weight: 600;
+}
+
+button.nav-link {
+    color:rgb(36, 36, 36);
+    font-weight: 700
+}
+
+#topSearchBtn {
+    color:rgb(255, 255, 255);
+}
+
+#signUpBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#switchActBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#settingsBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#signUpBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+#switchActBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+#settingsBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
 }
 
 table.table-borderless {
@@ -50,22 +75,10 @@ table.table-borderless {
 
 td {
     width: 25%;
+    overflow: hidden;
+    white-space: nowrap;
 }
-
-.message-send-date{
-
-}
-
-
 
 .red {
     background-color: red;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.aqua {
-    background-color: aqua;
 }
