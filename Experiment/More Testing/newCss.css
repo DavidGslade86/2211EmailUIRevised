@@ -1,0 +1,79 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url(https://i0.wp.com/djgwebdevelopment.files.wordpress.com/2023/01/pexels-pretty-sky-background.jpg?ssl=1);
+    overflow-y: hidden;
+}
+
+#navbarContainer {
+    background-color: rgba(165, 183, 240, 0.391);
+}
+
+.messageColumn {
+    background-color: rgba(255, 254, 238, 0.244);
+}
+
+.messageButton {
+    width: 100%;
+}
+
+#v-pills-inboxMesContent{
+    background-color: rgba(0, 0, 0, 0.287);
+}
+
+#v-allbox-tab {
+    background-color: rgba(255, 255, 255, 0.529);
+}
+
+button.nav-link {
+    color:rgb(36, 36, 36);
+    font-weight: 700
+}
+
+#topSearchBtn {
+    color:rgb(255, 255, 255);
+}
+
+#signUpBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#switchActBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#settingsBtn {
+    color: white;
+    font-weight: 600;
+}
+
+#signUpBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+#switchActBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+#settingsBtn:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+table.table-borderless {
+    table-layout: fixed;
+    width: 100%
+}
+
+td {
+    width: 25%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.red {
+    background-color: red;
+}

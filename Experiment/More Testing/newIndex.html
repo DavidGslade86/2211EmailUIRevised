@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="newCss.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -23,25 +22,25 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                        <li class="nav-item nav dropdown">
+                        <li class="nav-item dropdown nav">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Inboxes
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="nav-link dropdown-item inboxTop" id="v-pills-inbox-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true"><i class='fas fa-envelope my-auto col-3'></i> <span class = 'col-1' ></span><span>Inbox</span></button>
+                                    <button class="nav-link dropdown-item inboxTop" id="v-pills-inbox-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
                                 </li>
                                 <li>
-                                    <button class="nav-link dropdown-item sentTop" id="v-pills-sent-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false"><i class='fas fa-paper-plane col-3'></i><span class = 'col-1' ></span> <span class="#">Sent</span></button>
+                                    <button class="nav-link dropdown-item sentTop" id="v-pills-sent-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
                                 </li>
                                 <li>
-                                    <button class="nav-link dropdown-item draftsTop" id="v-pills-drafts-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false"><i class='fas fa-file col-3'></i><span class = 'col-1' ></span><span>Drafts</span></button>
+                                    <button class="nav-link dropdown-item draftsTop" id="v-pills-drafts-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
                                 </li>
                                 <li>
-                                    <button class="nav-link dropdown-item spamTop" id="v-pills-spam-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false"><i class='fas fa-radiation col-3'></i><span class = 'col-1' ></span><span>Spam</span></button>
+                                    <button class="nav-link dropdown-item spamTop" id="v-pills-spam-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
                                 </li>
                                 <li>
-                                    <button class="nav-link dropdown-item trashTop" id="v-pills-trash-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false"><i class='fas fa-trash col-3'></i><span class = 'col-1' ></span><span>Trash</span></button>
+                                    <button class="nav-link dropdown-item trashTop" id="v-pills-trash-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
                                 </li>
                             </ul>
                         </li>
@@ -55,7 +54,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-message1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -71,7 +70,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-message2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -87,7 +86,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-message3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -102,7 +101,7 @@
                                         </table></button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage4-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">                                            <table class="table-borderless">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-message4-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">                                            <table class="table-borderless">
                                             <thead>
                                             </thead>
                                             <tbody>
@@ -116,7 +115,7 @@
                                         </table></button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage5-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-message5-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -144,7 +143,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage1" type="button" role="tab" aria-controls="v-pills-sentmessage1" aria-selected="true">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-sentmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage1" type="button" role="tab" aria-controls="v-pills-sentmessage1" aria-selected="true">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -160,7 +159,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage2" type="button" role="tab" aria-controls="v-pills-sentmessage2" aria-selected="false">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-sentmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage2" type="button" role="tab" aria-controls="v-pills-sentmessage2" aria-selected="false">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -176,7 +175,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage3" type="button" role="tab" aria-controls="v-pills-sentmessage3" aria-selected="false">                     
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-sentmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage3" type="button" role="tab" aria-controls="v-pills-sentmessage3" aria-selected="false">                     
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -196,14 +195,14 @@
                     </div>
                     <div id="draftsMessagesDrop" class="collapse">
                         <!-- Drafts Messages Dropdown menu content goes here -->
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="draftsMsgsTop">
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="sentMsgsTop">
                             <li class="nav-item dropdown nav">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Drafts Messages
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage1" type="button" role="tab" aria-controls="v-pills-draftmessage1" aria-selected="true">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-draftmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage1" type="button" role="tab" aria-controls="v-pills-draftmessage1" aria-selected="true">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -219,7 +218,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage2" type="button" role="tab" aria-controls="v-pills-draftmessage2" aria-selected="false">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-draftmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage2" type="button" role="tab" aria-controls="v-pills-draftmessage2" aria-selected="false">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -235,7 +234,7 @@
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage3" type="button" role="tab" aria-controls="v-pills-draftmessage3" aria-selected="false">                     
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-draftmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage3" type="button" role="tab" aria-controls="v-pills-draftmessage3" aria-selected="false">                     
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -263,7 +262,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-spammessage1-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage1" type="button" role="tab" aria-controls="v-pills-spammessage1" aria-selected="true">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-spammessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage1" type="button" role="tab" aria-controls="v-pills-spammessage1" aria-selected="true">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -323,7 +322,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-trashmessage1-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage1" type="button" role="tab" aria-controls="v-pills-trashmessage1" aria-selected="true">
+                                        <button class="nav-link dropdown-item messageButton" id="v-pills-trashmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage1" type="button" role="tab" aria-controls="v-pills-trashmessage1" aria-selected="true">
                                             <table class="table-borderless">
                                                 <thead>
                                                 </thead>
@@ -378,7 +377,7 @@
             </div>
         </div>
         <!-- TOP NAVBAR ALWAYS VISIBLE -->
-        <a class="mx-auto navbar-brand ps-2" id="siteTitle" href="index.html">DG-Mail</a>
+        <a class="mx-auto navbar-brand ps-2" href="index.html">DG-Mail</a>
         <button class="navbar-toggler dropdown-menu-end" style="margin-right:5px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -408,11 +407,11 @@
                     <!--ALL TABS AND CONTENT-->
                     <div class="d-flex align-items-start h-100 leftcol">
                         <div class="nav flex-column nav-tabs h-100 d-none d-lg-flex col-2" id="v-allbox-tab" role="tablist" aria-orientation="vertical">
-                            <button class="nav-link d-flex active" id="v-pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true"><i class='fas fa-envelope my-auto col-3'></i> <span class = 'col-1' ></span> <span class='#'>Inbox</span></button>
-                            <button class="nav-link d-flex  align-content-start" id="v-pills-sent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false"><i class='fas fa-paper-plane col-3'></i><span class = 'col-1' ></span> <span class="#">Sent</span></button>
-                            <button class="nav-link d-flex" id="v-pills-drafts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false"><i class='fas fa-file col-3'></i><span class = 'col-1' ></span><span>Drafts</span></button>
-                            <button class="nav-link d-flex" id="v-pills-spam-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false"> <i class='fas fa-radiation col-3'></i><span class = 'col-1' ></span><span>Spam</span> </button>
-                            <button class="nav-link d-flex" id="v-pills-trash-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false"><i class='fas fa-trash col-3'></i><span class = 'col-1' ></span><span>Trash</span></button>
+                            <button class="nav-link active" id="v-pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
+                            <button class="nav-link" id="v-pills-sent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
+                            <button class="nav-link" id="v-pills-drafts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
+                            <button class="nav-link" id="v-pills-spam-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
+                            <button class="nav-link" id="v-pills-trash-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
                         </div>
                         <!-- Below DIV Changes Message and Mail Columns-->
                         <div class="tab-content h-100 " id="v-pills-inboxMessages">
@@ -1031,9 +1030,7 @@
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="index.js">
+        <script src="newJs.js">
         </script>
     </body>
 </html>

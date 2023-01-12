@@ -1,418 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+    <title>BootStrap Grid</title>
+<!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg" id="navbarContainer">
-        <div class="navbar d-flex d-lg-none m-0">
-            <button class="navbar-toggler nav-tabs" style="margin-left:5px !important;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- TOP NAVBAR ALWAYS VISIBLE -->
+            <a class="navbar-brand ps-2" href="index.html">DG-Mail</a>
+            <button class="navbar-toggler dropdown-menu-end" style="margin-right:5px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MAIL OPTIONS</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                        <li class="nav-item nav dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Inboxes
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <button class="nav-link dropdown-item inboxTop" id="v-pills-inbox-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true"><i class='fas fa-envelope my-auto col-3'></i> <span class = 'col-1' ></span><span>Inbox</span></button>
-                                </li>
-                                <li>
-                                    <button class="nav-link dropdown-item sentTop" id="v-pills-sent-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false"><i class='fas fa-paper-plane col-3'></i><span class = 'col-1' ></span> <span class="#">Sent</span></button>
-                                </li>
-                                <li>
-                                    <button class="nav-link dropdown-item draftsTop" id="v-pills-drafts-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false"><i class='fas fa-file col-3'></i><span class = 'col-1' ></span><span>Drafts</span></button>
-                                </li>
-                                <li>
-                                    <button class="nav-link dropdown-item spamTop" id="v-pills-spam-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false"><i class='fas fa-radiation col-3'></i><span class = 'col-1' ></span><span>Spam</span></button>
-                                </li>
-                                <li>
-                                    <button class="nav-link dropdown-item trashTop" id="v-pills-trash-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false"><i class='fas fa-trash col-3'></i><span class = 'col-1' ></span><span>Trash</span></button>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- ADDITIONAL MESSAGES DROPDOWN CONTENT VISIBLE MD AND BELOW-->
-                    <div id = "topInboxDrop">
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="inboxMsgsTop">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex">
+                    <input class="form-control me-1" type="search" placeholder="Search Mail" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <button class="btn">Settings</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn top_login">Switch Accounts</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn sign_btn">SignUp</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- FlEXIBLE MAILBOX OFF-CANVAS / INBOXES VISIBLE BELOW LG -->
+            <div class="container-fluid navbar d-flex d-lg-none">
+                <button class="navbar-toggler nav-tabs" style="margin-left:5px !important;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MAIL OPTIONS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                             <li class="nav-item dropdown nav">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Inbox Messages
+                                Inboxes
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Alice</td>
-                                                        <td class="message-send-date border-end px-2">Hello... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 1 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
+                                        <button class="nav-link dropdown-item" id="v-pills-inbox-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Ben</td>
-                                                        <td class="message-send-date border-end px-2">Hello there... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
+                                        <button class="nav-link dropdown-item" id="v-pills-sent-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="message-send-date border-end px-2">Dave</td>
-                                                    <td class="message-send-date border-end px-2">Hi there... </td>
-                                                    <td class="message-send-date border-end px-2">Jan 3 </td>
-                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table></button>
+                                        <button class="nav-link dropdown-item" id="v-pills-drafts-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage4-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">                                            <table class="table-borderless">
-                                            <thead>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="message-send-date border-end px-2">Januce</td>
-                                                    <td class="message-send-date border-end px-2">Sup... </td>
-                                                    <td class="message-send-date border-end px-2">Jan 3 </td>
-                                                    <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table></button>
+                                        <button class="nav-link dropdown-item" id="v-pills-spam-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
                                     </li>
                                     <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topmessage5-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Alice</td>
-                                                        <td class="message-send-date border-end px-2">Hey again... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
+                                        <button class="nav-link dropdown-item" id="v-pills-trash-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                    </div>
-                    <div id="sentMessagesDrop" class="collapse">
-                        <!-- Sent Message Dropdown content goes here -->
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="sentMsgsTop">
-                            <li class="nav-item dropdown nav">
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sent Messages
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage1" type="button" role="tab" aria-controls="v-pills-sentmessage1" aria-selected="true">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
+                        <!-- ADDITIONAL MESSAGES DROPDOWN CONTENT VISIBLE MD AND BELOW-->
+                        <div id = "topInboxDrop ">
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="inboxMsgsTop">
+                                <li class="nav-item dropdown nav">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Messages
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="message-send-date border-end px-2">Alice</td>
+                                                            <td class="message-send-date border-end px-2">Hello... </td>
+                                                            <td class="message-send-date border-end px-2">Jan 1 </td>
+                                                            <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="message-send-date border-end px-2">Ben</td>
+                                                            <td class="message-send-date border-end px-2">Hello there... </td>
+                                                            <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                            <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td class="message-send-date border-end px-2">Dan</td>
-                                                        <td class="message-send-date border-end px-2">Hi... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage2" type="button" role="tab" aria-controls="v-pills-sentmessage2" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Ken</td>
-                                                        <td class="message-send-date border-end px-2">Ahoy... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topsentmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-sentmessage3" type="button" role="tab" aria-controls="v-pills-sentmessage3" aria-selected="false">                     
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="message-send-date border-end px-2">Vince</td>
-                                                        <td class="message-send-date border-end px-2">Hola... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table></button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="draftsMessagesDrop" class="collapse">
-                        <!-- Drafts Messages Dropdown menu content goes here -->
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="draftsMsgsTop">
-                            <li class="nav-item dropdown nav">
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Drafts Messages
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage1" type="button" role="tab" aria-controls="v-pills-draftmessage1" aria-selected="true">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Liam</td>
-                                                        <td class="message-send-date border-end px-2">Hi... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage2" type="button" role="tab" aria-controls="v-pills-draftmessage2" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Tie</td>
-                                                        <td class="message-send-date border-end px-2">Ahoy... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-topdraftmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-draftmessage3" type="button" role="tab" aria-controls="v-pills-draftmessage3" aria-selected="false">                     
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Troy</td>
-                                                        <td class="message-send-date border-end px-2">Hola... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="spamMessagesDrop" class="collapse">
-                        <!-- Spam Messages Dropdown menu content goes here -->
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="spamMsgsTop">
-                            <li class="nav-item dropdown nav">
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Spam Messages
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-spammessage1-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage1" type="button" role="tab" aria-controls="v-pills-spammessage1" aria-selected="true">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Arn</td>
-                                                        <td class="message-send-date border-end px-2">Hi... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-spammessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage2" type="button" role="tab" aria-controls="v-pills-spammessage2" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Phil</td>
-                                                        <td class="message-send-date border-end px-2">Ahoy... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-spammessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage3" type="button" role="tab" aria-controls="v-pills-spammessage3" aria-selected="false">                     
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Kyle</td>
-                                                        <td class="message-send-date border-end px-2">Hola... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 4 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="trashMessagesDrop" class="collapse">
-                        <!-- Trash Messages Dropdown menu content goes here -->
-                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="trashMsgsTop">
-                            <li class="nav-item dropdown nav">
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Trash Messages
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-trashmessage1-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage1" type="button" role="tab" aria-controls="v-pills-trashmessage1" aria-selected="true">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Ian</td>
-                                                        <td class="message-send-date border-end px-2">Hello... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 1 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-trashmessage2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage2" type="button" role="tab" aria-controls="v-pills-trashmessage2" aria-selected="false">
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Ted</td>
-                                                        <td class="message-send-date border-end px-2">Hello there... </td>
-                                                        <td class="message-send-date border-end px-2">Jan 2 </td>
-                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="nav-link dropdown-item messageButton" id="v-pills-trashmessage3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-trashmessage3" type="button" role="tab" aria-controls="v-pills-trashmessage3" aria-selected="false">                     
-                                            <table class="table-borderless">
-                                                <thead>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="message-send-date border-end px-2">Kent</td>
+                                                        <td class="message-send-date border-end px-2">Dave</td>
                                                         <td class="message-send-date border-end px-2">Hi there... </td>
                                                         <td class="message-send-date border-end px-2">Jan 3 </td>
                                                         <td class="message-send-date px-2"><input type="checkbox"></td>
                                                     </tr>
                                                 </tbody>
-                                            </table>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                                            </table></button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message4-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message4" type="button" role="tab" aria-controls="v-pills-message4" aria-selected="false">                                            <table class="table-borderless">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Januce</td>
+                                                        <td class="message-send-date border-end px-2">Sup... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table></button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message5-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message5" type="button" role="tab" aria-controls="v-pills-message5" aria-selected="false">
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="message-send-date border-end px-2">Alice</td>
+                                                            <td class="message-send-date border-end px-2">Hey again... </td>
+                                                            <td class="message-send-date border-end px-2">Jan 4 </td>
+                                                            <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="sentMessages">
+                          <div id="sentMessagesDrop" class="collapse">
+                            <!-- Dropdown menu content goes here -->
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-flex d-md-none"  id="inboxMsgsTop">
+                                <li class="nav-item dropdown nav">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Messages
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-message1" type="button" role="tab" aria-controls="v-pills-message1" aria-selected="true">
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="message-send-date border-end px-2">Alice</td>
+                                                            <td class="message-send-date border-end px-2">Hello... </td>
+                                                            <td class="message-send-date border-end px-2">Jan 1 </td>
+                                                            <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message2-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message2" type="button" role="tab" aria-controls="v-pills-message2" aria-selected="false">
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="message-send-date border-end px-2">Ben</td>
+                                                            <td class="message-send-date border-end px-2">Hello there... </td>
+                                                            <td class="message-send-date border-end px-2">Jan 2 </td>
+                                                            <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link dropdown-item messageButton" id="v-pills-message3-tab-top" data-bs-toggle="pill" data-bs-target="#v-pills-message3" type="button" role="tab" aria-controls="v-pills-message3" aria-selected="false">                     
+                                                <table class="table-borderless">
+                                                    <thead>
+                                                    </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="message-send-date border-end px-2">Dave</td>
+                                                        <td class="message-send-date border-end px-2">Hi there... </td>
+                                                        <td class="message-send-date border-end px-2">Jan 3 </td>
+                                                        <td class="message-send-date px-2"><input type="checkbox"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table></button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- TOP NAVBAR ALWAYS VISIBLE -->
-        <a class="mx-auto navbar-brand ps-2" id="siteTitle" href="index.html">DG-Mail</a>
-        <button class="navbar-toggler dropdown-menu-end" style="margin-right:5px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex mx-2">
-                <input class="form-control me-1" type="search" placeholder="Search Mail" aria-label="Search">
-                <button class="btn btn-outline-dark" id="topSearchBtn" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item topBarBtns active">
-                    <button class="btn" id="settingsBtn">Settings</button>
-                </li>
-                <li class="nav-item topBarBtns">
-                    <button class="btn top_login" id="switchActBtn">Switch Accounts</button>
-                </li>
-                <li class="nav-item topBarBtns">
-                    <button class="btn sign_btn" id="signUpBtn">SignUp</button>
-                </li>
-            </ul>
-        </div>
-        <!-- FlEXIBLE MAILBOX OFF-CANVAS / INBOXES VISIBLE BELOW LG -->
-    </nav>
+        </nav>
         <!-- End of top NAVBAR and Collapsed Navbar Content Main Page Content Below-->
         <div class="container mt-0 me-auto mw-100 h-100">
             <div class="row h-100">
-                <div class="h-100 m-0 p-0">
+                <div class="h-100 m-0 p-0 bg-light">
                     <!--ALL TABS AND CONTENT-->
                     <div class="d-flex align-items-start h-100 leftcol">
                         <div class="nav flex-column nav-tabs h-100 d-none d-lg-flex col-2" id="v-allbox-tab" role="tablist" aria-orientation="vertical">
-                            <button class="nav-link d-flex active" id="v-pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true"><i class='fas fa-envelope my-auto col-3'></i> <span class = 'col-1' ></span> <span class='#'>Inbox</span></button>
-                            <button class="nav-link d-flex  align-content-start" id="v-pills-sent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false"><i class='fas fa-paper-plane col-3'></i><span class = 'col-1' ></span> <span class="#">Sent</span></button>
-                            <button class="nav-link d-flex" id="v-pills-drafts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false"><i class='fas fa-file col-3'></i><span class = 'col-1' ></span><span>Drafts</span></button>
-                            <button class="nav-link d-flex" id="v-pills-spam-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false"> <i class='fas fa-radiation col-3'></i><span class = 'col-1' ></span><span>Spam</span> </button>
-                            <button class="nav-link d-flex" id="v-pills-trash-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false"><i class='fas fa-trash col-3'></i><span class = 'col-1' ></span><span>Trash</span></button>
+                            <button class="nav-link active" id="v-pills-inbox-tab" data-bs-toggle="pill" data-bs-target="#v-pills-inbox" type="button" role="tab" aria-controls="v-pills-inbox" aria-selected="true">Inbox</button>
+                            <button class="nav-link" id="v-pills-sent-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sent" type="button" role="tab" aria-controls="v-pills-sent" aria-selected="false">Sent</button>
+                            <button class="nav-link" id="v-pills-drafts-tab" data-bs-toggle="pill" data-bs-target="#v-pills-drafts" type="button" role="tab" aria-controls="v-pills-drafts" aria-selected="false">Drafts</button>
+                            <button class="nav-link" id="v-pills-spam-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spam" type="button" role="tab" aria-controls="v-pills-spam" aria-selected="false">Spam</button>
+                            <button class="nav-link" id="v-pills-trash-tab" data-bs-toggle="pill" data-bs-target="#v-pills-trash" type="button" role="tab" aria-controls="v-pills-trash" aria-selected="false">Trash</button>
                         </div>
                         <!-- Below DIV Changes Message and Mail Columns-->
                         <div class="tab-content h-100 " id="v-pills-inboxMessages">
@@ -491,9 +312,9 @@
                                             </table>
                                         </button>
                                     </div>
-                                    <div class="tab-content h-100" id="v-pills-inboxMesContent">
+                                    <div class="tab-content h-100 " id="v-pills-tabContent">
                                         <!-- Mail UI content goes here -->
-                                        <div class="tab-pane fade show active h-100 " id="v-pills-message1" role="tabpanel" aria-labelledby="v-pills-message1-tab" tabindex="0">
+                                        <div class="tab-pane fade show active h-100" id="v-pills-message1" role="tabpanel" aria-labelledby="v-pills-message1-tab" tabindex="0">
                                             <div class="card p-2 m-3 ">
                                                 <h5 class="card-title">Hello...</h5>
                                                 <h6 class="card-subtitle mb-2 text-muted">Alice | Jan 1</h6>
@@ -807,7 +628,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade h-100" id="v-pills-spam" role="tabpanel" aria-labelledby="v-pills-spam-tab" tabindex="0">
-                                <div class="d-flex align-items-start h-100" id="spam-contents">
+                                <div class="d-flex align-items-start h-100" id="drafts-contents">
                                     <div class="nav flex-column nav-pills p-3 h-100 col-5 d-none d-md-flex align-items-end messageColumn" id="spam-pills-tab" role="tablist" aria-orientation="vertical">
                                         <button class="nav-link active" id="v-pills-spammessage1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-spammessage1" type="button" role="tab" aria-controls="v-pills-spammessage1" aria-selected="true">
                                             <table class="table-borderless">
@@ -1031,8 +852,6 @@
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="index.js">
         </script>
     </body>
